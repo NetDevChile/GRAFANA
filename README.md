@@ -63,9 +63,9 @@ services:
    networks:
       - i40sys
 networks:
- i40sys:
+ dockerlink:
    external:
-     name: i40sys
+     name: dockerlink
 ```
 
 ################ Iniciamos Compose #############
