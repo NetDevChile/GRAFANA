@@ -1,4 +1,4 @@
-# GRAFANA
+# HOW TO CONFIGURE GRAFANA (USING DOCKER)
 Show in real time the data metrics and let you analyze the data
 
 ###################### creamos Usuario Grafana ###########
