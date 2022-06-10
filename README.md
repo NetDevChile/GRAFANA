@@ -61,7 +61,7 @@ services:
    ports:
       - 3000:3000
    networks:
-      - i40sys
+      - dockerlink
 networks:
  dockerlink:
    external:
