@@ -3,11 +3,14 @@ Show in real time the data metrics and let you analyze the data
 
 ###################### creamos Usuario Grafana ###########
 
+```
 groupadd grafana -g 472
 useradd grafana -u 472 -g 472 -m -s /bin/false
+```
 
 ####################### Creamos Directorios ##############
 
+```
 mkdir -p /docker-data/grafana/etc
 mkdir -p /docker-data/grafana/scripts
 mkdir -p /docker-data/grafana/log
@@ -26,13 +29,17 @@ chmod 640 grafana.db
 chmod 755 plugins png
 docker stop grafana
 docker rm grafana
+```
 
 ################## Configurar docker-compose ################
 
+```
 nano /docker-data/grafana/docker-compose.yml
+```
 
 ----------------- Archivo docker-compose.yml ----------------
 
+```
 version: '3.8'
 services:
  grafana:
@@ -59,22 +66,28 @@ networks:
  i40sys:
    external:
      name: i40sys
+```
 
-################ Iniciamos Compose #############3
+################ Iniciamos Compose #############
 
+```
 cd /docker-data/grafana
 docker-compose up -d
+```
 
-############## Entrar a Grafana ##########3
+############## Entrar a Grafana ##########
 
+```
 http://localhost:3000/
 
-######### 
+
 usuario: admin
 password: admin
+```
 
-configurar Data Sources con base de dato influxdb v1
+############ configurar Data Sources con base de dato influxdb v1 ############
 
+```
 name : InfluxDB/Telegraf
 query language: InfluxQL
 Url: http://influx1:8086
@@ -83,3 +96,4 @@ Access: Server
 Database : telegraf
 User: telegraf_r
 Password: password
+```
